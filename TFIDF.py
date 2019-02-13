@@ -106,5 +106,5 @@ def summarize(chapter: str, chapters: List[str], number_of_sents:int=5) -> List[
     # Sort the sentences in descending order by the score, only keeping the top n where n is the number_of_sents
     top_sents = list(reversed(sorted(sentence_scores, key=operator.itemgetter(1))))[:number_of_sents]
     
-    # Return the sentence 
+    # Return the sentences sorted by their location within the document
     return [x[0] for x in list(sorted(top_sents, key=operator.itemgetter(2)))]
